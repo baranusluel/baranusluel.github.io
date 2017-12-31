@@ -1,0 +1,29 @@
+.img-circular{
+	border-radius: 50%;
+}
+
+.img-profile{
+	width: 20%;
+	height: auto;
+}
+
+.container{
+	text-align: center;
+	margin-top: 2%;
+}
+
+.img-icon{
+	width: 100px;
+	display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+.img-icon:hover{
+	width: 104px;
+	margin-top: -3px;
+	margin-right: 48px;
+	margin-left: 48px;
+}
+.img-icon-github:hover{
+	
+}
