@@ -29,7 +29,7 @@ github_username:  baranusluel
 linkedin_username: baranusluel
 
 # Build settings
-theme: jekyll-theme-midnight
+remote_theme: ronv/ultra
 plugins:
   - jekyll-feed
 
