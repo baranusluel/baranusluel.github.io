@@ -4,8 +4,8 @@ title: About
 permalink: /about
 ---
 
-<div class="container">
-  <h2>Who am I?</h2>
+## Who am I?
 
-  <p>This page is a work in progress. Check back soon!</p>
-</div>
+This page is a work in progress. Check back soon!
+
+**[RESUME](/assets/resume.pdf)**

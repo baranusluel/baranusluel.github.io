@@ -3,6 +3,6 @@ layout: default
 ---
 <h1 class="post-title">Hello World!</h1>
 
-<p><strong>This website is correctly under construction.</strong></p>
+**This website is correctly under construction.**
 
-<p>Please view my old webpage <a href="/old/">here</a></p>
+Please view my old webpage [here](/old/).
