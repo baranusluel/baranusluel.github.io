@@ -28,6 +28,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  baranusluel
 linkedin_username: baranusluel
 
+permalink: pretty
+
 # Build settings
 remote_theme: ronv/ultra
 plugins:
