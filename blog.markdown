@@ -1,6 +1,7 @@
 ---
 layout: blog
 title: Blog
+permalink: /blog
 ---
 # "Hello, World!"
 Welcome to my personal blog! Who am I? Briefly put, I’m an engineering student interested in technology, fitness and learning. I’m creating this blog to journal my thoughts across these interest areas and any other random topics I may find noteworthy.
