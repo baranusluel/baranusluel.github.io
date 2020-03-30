@@ -20,6 +20,9 @@
 
 title: Baran Usluel
 email: me@baranusluel.com
+author:
+  name: Baran Usluel
+  email: me@baranusluel.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to my personal website and blog! I am an undergraduate student
   at Georgia Tech studying electrical engineering and computer science.
@@ -36,6 +39,8 @@ permalink: pretty
 remote_theme: ronv/ultra
 plugins:
   - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.
