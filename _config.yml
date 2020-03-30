@@ -28,6 +28,8 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  baranusluel
 linkedin_username: baranusluel
 
+timezone: America/New_York
+
 permalink: pretty
 
 # Build settings
