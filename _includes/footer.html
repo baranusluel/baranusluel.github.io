@@ -3,3 +3,7 @@
         © 2020 Baran Usluel / <a href="/atom.xml">RSS Feed</a>.
     </small>
 </footer>
+{% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+{% endif %}
+<!-- HTML body ends here -->
