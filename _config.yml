@@ -29,11 +29,12 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://baranusluel.com" # the base hostname & protocol for your site, e.g. http://example.com
 
-github_username:  baranusluel
-linkedin_username: baranusluel
-
 social:
-  links:
+  usernames: # used for icons in footer
+    linkedin: baranusluel
+    github: baranusluel
+    facebook: busluel
+  links: # used by SEO plugin (Jekyll does not allow substituting variables in _config?)
     - https://www.linkedin.com/in/baranusluel
     - https://github.com/baranusluel
     - https://www.facebook.com/busluel
@@ -41,6 +42,8 @@ social:
 timezone: America/New_York
 
 permalink: pretty
+
+google_analytics: "UA-162233532-1"
 
 # Build settings
 remote_theme: ronv/ultra

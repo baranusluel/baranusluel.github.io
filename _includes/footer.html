@@ -1,5 +1,12 @@
 <footer class="footer" role="contentinfo">
     <small>
-        © 2020 Baran Usluel / <a href="/atom.xml">RSS Feed</a>.
+        <div style="float: left">
+            © {{ site.time | date: '%Y' }} {{ site.author.name }}<br>
+            <a href="/atom.xml">RSS Feed</a>
+        </div>
+        <div style="float: right">
+            <code>{{ site.author.email }}</code><br>
+            {%- include social.html -%}
+        </div>
     </small>
 </footer>
