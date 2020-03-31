@@ -19,6 +19,8 @@ Experience working on software for hardware products at **Qualcomm** and **Faceb
 Interested in working across the hardware/software stack in cutting-edge
 robotics, perception and autonomous systems.
 
+<hr>
+
 ## Experience
 
 ### Facebook
@@ -59,11 +61,13 @@ Developed and maintained **3 websites** for the clients of a local advertising &
 
 Built plugins for commercial Minecraft server networks using Java and the Bukkit API to add new gameplay functionality. Wrote **100+** Java plugins (**25,000+ lines**) in total, for clients and as open-source projects ([one with 750,000 downloads](https://github.com/baranusluel/bukkit-simpleprefix)).
 
+<hr>
+
 ## Projects
 
 ### Autoknoby | HackMobile
 
-<iframe class="left-float-pic" style="margin-bottom: 20px" src="https://www.youtube.com/embed/xL6oJc1dAVI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="left-float-pic" style="margin-bottom: 30px" src="https://www.youtube.com/embed/xL6oJc1dAVI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Led a team making [an IoT facial-recognition system](https://github.com/baranusluel/autoknoby) at Qualcomm's Intern Hackathon. Awarded ‘Most Innovative Hack’ and ‘Top 10 Best Hack’ from 60 teams.
 
@@ -83,7 +87,7 @@ Also developed [a version of the game](https://github.com/baranusluel/2048-3d-ma
 
 ### Mbed Pacman RPG | Embedded platform game
 
-<iframe class="left-float-pic" style="margin-bottom: 20px" src="https://www.youtube.com/embed/NhTJ7zDlHBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe class="left-float-pic" style="margin-bottom: 30px" src="https://www.youtube.com/embed/NhTJ7zDlHBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Designed a Pacman-themed [RPG game in C](https://github.com/baranusluel/mbed-pacman-rpg) for the ARM Mbed platform.
 <br style="clear: left;">
