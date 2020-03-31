@@ -7,35 +7,45 @@
 }
 
 .column {
-  float: left;
-  width: 50%;
-  padding: 10px;
+    float: left;
+    width: 50%;
+    padding: 10px;
 }
 
 /* Clear floats after the columns */
 .row:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
 @media screen and (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
+    .column {
+        width: 100%;
+    }
+}
+
+.left-float-pic {
+    float: left;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.right-float-pic {
+    float: right;
+    width: 30%;
+    margin-left: 20px;
 }
 
 .profile-pic {
     width: 40%;
-    margin-right: 5%;
-    float: left;
 }
 
 .social-media-list {
-  list-style: none;
-  padding: 0;
-  display: table;
-  margin: 0 auto;
+    list-style: none;
+    padding: 0;
+    display: table;
+    margin: 0 auto;
 }
 
 .social-media-list li {
@@ -43,8 +53,12 @@
 }
 
 .svg-icon {
-  margin: 10px;
-  width: 16px;
-  height: 16px;
-  display: inline-block;
+    margin: 10px;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+h1 {
+    font-size: 2em;
 }

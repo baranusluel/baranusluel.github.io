@@ -12,7 +12,7 @@ layout: default
   <a href="/about"><div class="column">
     <h2>About Me</h2>
     <hr>
-    <img class="profile-pic" src="/assets/profile_suit.jpg"/>
+    <img class="profile-pic left-float-pic" src="/assets/profile_suit.jpg"/>
     <p>Who am I?<br>
     What do I do?</p>
     <p style="font-weight: initial">All this and much more answered on my eportfolio!</p>
@@ -20,7 +20,7 @@ layout: default
   <a href="/blog"><div class="column">
     <h2>Blog</h2>
     <hr>
-    <img class="profile-pic" src="/assets/profile_hiking.jpg"/>
+    <img class="profile-pic left-float-pic" src="/assets/profile_hiking.jpg"/>
     <p>Technology. Fitness. Learning.</p>
     <p style="font-weight: initial">That's some of what I'll write about on my personal blog.</p>
   </div></a>
