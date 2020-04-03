@@ -31,7 +31,7 @@ Interned at Facebook in Menlo Park during Summer 2019, on the Oculus VR OS team.
 
 Developed automated audio test framework with **Java (JNI)** and **C++** for AOSP-based standalone Oculus VR devices.
 
-Performed bring-up of a system service, assisted in developing a new **AOSP HAL** and implemented the first E2E tests for a **innovative, high-impact** audio feature.
+Performed bring-up of a system service, assisted in developing a new **AOSP HAL** and implemented the first E2E tests for an **innovative, high-impact** audio feature.
 <br style="clear: left;">
 
 ### Qualcomm

@@ -44,7 +44,7 @@ are not extremely rigorous, but I think it shows an interesting perspective.
 
 Here I analytically calculate inverse kinematics for a 6 DOF robot using
 homogenous coordinates and by decoupling the triple-roll wrist. This is essentially
-my replication and re-derivation of a commonly showed result in the robotics literature.
+my replication and re-derivation of a commonly shown result in the robotics literature.
 
 ## Chemistry IA Essay
 
