@@ -19,9 +19,25 @@ Experience working on software for hardware products at **Qualcomm** and **Faceb
 Interested in working across the hardware/software stack in cutting-edge
 robotics, perception and autonomous systems.
 
+### Contact Me
+
+For professional inquiries, please reach me at:
+<p style="margin-top: 5px;"><code>me@baranusluel.com</code></p>
+<div style="float: left; margin-top: -10px; margin-left: -10px; margin-bottom: 10px;">{%- include social.html -%}</div>
+
 <hr>
 
-## Experience
+<nav role="navigation">
+  <ul>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
+</nav>
+
+<hr>
+
+<h2><a name="experience" class="hidden-link">Experience</a></h2>
 
 ### Facebook
 
@@ -63,13 +79,29 @@ Built plugins for commercial Minecraft server networks using Java and the Bukkit
 
 <hr>
 
-## Projects
+<h2><a name="education" class="hidden-link">Education</a></h2>
+
+### Georgia Institute of Technology
+
+Studying for a Bachelor of Science in **Electrical Engineering**, with a minor in **Computer Science** (**Artificial Intelligence** concentration).
+
+Expecting to graduate **December 2021**.
+
+**Relevant Coursework:** Deep Learning, Computer Vision, Robotics & Perception, Machine Learning, Advanced Programming Techniques, Cryptographic Hardware for Embedded Systems, Programming HW/SW Systems
+
+**Extracurriculars:** GT Chamber Choir, RoboJackets (Intelligent Ground Vehicle Competition, Electrical Team), Wreck Racing, Intramural Soccer & Ultimate Frisbee, Tech Treks Alaska.
+
+**Certifications:** American Red Cross First Aid/CPR/AED, PADI Open Water Scuba Diver *(in progress)*.
+
+<hr>
+
+<h2><a name="projects" class="hidden-link">Projects</a></h2>
 
 ### Autoknoby | HackMobile
 
 <iframe class="left-float-pic" style="margin-bottom: 30px" src="https://www.youtube.com/embed/xL6oJc1dAVI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Led a team making [an IoT facial-recognition system](https://github.com/baranusluel/autoknoby) at Qualcomm's Intern Hackathon. Awarded ‘Most Innovative Hack’ and ‘Top 10 Best Hack’ from 60 teams.
+Led a team making [an IoT facial-recognition system](https://github.com/baranusluel/autoknoby) at Qualcomm's Intern Hackathon. Awarded **‘Most Innovative Hack’** and ‘Top 10 Best Hack’ from 60 teams.
 
 Leveraged Python and OpenCV for facial detection, with Microsoft’s Face API for recognition, on a DragonBoard 410c.
 <br style="clear: left;">
@@ -112,3 +144,9 @@ summer program for high school juniors. See final report [here](/assets/catchbot
 
 Implemented naive stereo vision algorithm with C++ and OpenCV, built control circuit and assisted with mechanical design.
 <br style="clear: left;">
+
+<hr>
+
+#### Purpose Statement
+
+<small>The purpose of this eportfolio is to develop my online presence as an engineering student and software engineer, and to help me advance my career through job and networking opportunities. Additionally, it is being used to fulfill course requirements for 'Professional and Technical Communications for ECE'.</small>
