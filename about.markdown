@@ -21,11 +21,13 @@ robotics, perception and autonomous systems.
 
 ### Contact Me
 
-For professional inquiries, please reach me at:
-<p style="margin-top: 5px;"><code>me@baranusluel.com</code></p>
-<div style="float: left; margin-top: -10px; margin-left: -10px; margin-bottom: 10px;">{%- include social.html -%}</div>
+<div class="row">
+<div class="column-3">Feel free to reach me at:</div>
+<div class="column-3" style="text-align: center"><code>me@baranusluel.com</code></div>
+<div class="column-3" style="margin-top: -5px;">{%- include social.html -%}</div>
+</div>
 
-<hr>
+<!--<hr>
 
 <nav role="navigation">
   <ul>
@@ -33,7 +35,7 @@ For professional inquiries, please reach me at:
     <li><a href="#education">Education</a></li>
     <li><a href="#projects">Projects</a></li>
   </ul>
-</nav>
+</nav>-->
 
 <hr>
 
@@ -144,9 +146,3 @@ summer program for high school juniors. See final report [here](/assets/catchbot
 
 Implemented naive stereo vision algorithm with C++ and OpenCV, built control circuit and assisted with mechanical design.
 <br style="clear: left;">
-
-<hr>
-
-#### Purpose Statement
-
-<small>The purpose of this eportfolio is to develop my online presence as an engineering student and software engineer, and to help me advance my career through job and networking opportunities. Additionally, it is being used to fulfill course requirements for 'Professional and Technical Communications for ECE'.</small>
