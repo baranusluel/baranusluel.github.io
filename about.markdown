@@ -12,7 +12,7 @@ permalink: /about
 **Software engineer** and candidate for **BS in Electrical Engineering at Georgia Tech**,
 with ~1 year of experience working on production software.
 
-Technical skills include proficiency in **Java**, **C++** and **Python**, and familiary with **PyTorch**.
+Technical skills include proficiency in **Java**, **C++** and **Python**, and familiarity with **PyTorch**.
 
 Experience working on software for hardware products at **Qualcomm** and **Facebook AR/VR (Oculus)**.
 
@@ -99,7 +99,31 @@ Expecting to graduate **December 2021**.
 
 <h2><a name="projects" class="hidden-link">Projects</a></h2>
 
-### Autoknoby | HackMobile
+### Resisting Adversarial Attacks by k-WTA
+
+<img class="left-float-pic" style="margin-bottom: 20px;" src="/assets/kwta_relu.JPG">
+
+Demonstrated reproducibility of empirical results of ICLR 2020 paper *"Enhancing Adversarial Defense by k-Winners-Take-All"* (Xiao et al.).
+
+Utilized **PyTorch** to replace ReLU activations in well-known deep model architectures with the k-WTA activation function, and test performance under several white-box attacks.
+
+Discovered a significant performance overhead not mentioned in the original work, and proposed a workaround to improve training time.
+
+See our [final report](https://github.com/baranusluel/kWTA-activation/raw/master/CS7643_Final_Report.pdf) and our [project repo](https://github.com/baranusluel/kWTA-activation).
+<br style="clear: left;">
+
+### Sentiment Analysis with CNNs
+
+<img class="right-float-pic" style="height: 150px; width: auto" src="/assets/sentiment_wordcloud.png">
+
+Trained a deep convolutional neural network with **Keras** to perform sentiment analysis on movie reviews using word2vec embeddings.
+
+Achieved a test accuracy of 71% on the Bo Pang et al. movie review 'scale dataset v1.0'.
+
+See our [final report](https://baranusluel.com/sentiment-cnn/) as a Github Page.
+<br style="clear: right;">
+
+### Autoknoby | HackMobile project
 
 <iframe class="left-float-pic" style="margin-bottom: 30px" src="https://www.youtube.com/embed/xL6oJc1dAVI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -108,9 +132,8 @@ Led a team making [an IoT facial-recognition system](https://github.com/baranusl
 Leveraged Python and OpenCV for facial detection, with Microsoft’s Face API for recognition, on a DragonBoard 410c.
 <br style="clear: left;">
 
-### 2048 3D | Mobile and web game
-
 <a href="https://2048.baranusluel.com/"><img class="right-float-pic" src="/assets/2048_3d.gif"></a>
+### 2048 3D | Mobile and web game
 
 Developed a [fully 3D version](https://github.com/baranusluel/2048-3d) of the popular 2048 game using Unity and C#, for web and Android (Google Play) devices.
 
@@ -126,23 +149,22 @@ Also developed [a version of the game](https://github.com/baranusluel/2048-3d-ma
 Designed a Pacman-themed [RPG game in C](https://github.com/baranusluel/mbed-pacman-rpg) for the ARM Mbed platform.
 <br style="clear: left;">
 
-### Flight VR | Virtual reality game
-
 <img class="right-float-pic" src="/assets/flight_vr.jpg">
+### Flight VR | Virtual reality game
 
 Created a Google Cardboard [VR game](https://github.com/baranusluel/flight-VR) with Unity.
 
 This was submitted as a project for my *English* class, believe it or not.
 <br style="clear: right;">
 
-### Catch-Bot | Operation Catapult
+### Catch-Bot | Operation Catapult project
 
 <img class="left-float-pic" src="/assets/catchbot.png">
 
 Led a team of 4 to build a robot that catches balls in the air.
 
 Awarded 1st place for ‘Best Project’ out of 40 teams, at Rose-Hulman's
-summer program for high school juniors. See final report [here](/assets/catchbot_report.pdf).
+summer program for high school juniors. See the [final report](/assets/catchbot_report.pdf).
 
 Implemented naive stereo vision algorithm with C++ and OpenCV, built control circuit and assisted with mechanical design.
 <br style="clear: left;">
