@@ -42,6 +42,8 @@ Collaborated cross-functionally with partner teams to enable future of work scen
 
 Contributed 10,000+ lines of production code in **C++** to an infrastructural codebase and overhauled a core component.
 
+<br>
+
 ### Facebook, Summer 2019
 
 <img class="left-float-pic" src="/assets/fb_pic.jpg"/>
@@ -52,6 +54,7 @@ Introduced the first "Hey Oculus" voice assistant wake-word on the Oculus Quest 
 
 Developed automated audio test framework with **Java (JNI)** and **C++** for AOSP-based standalone Oculus VR devices.
 
+<br>
 
 ### Qualcomm, Summer 2018
 
@@ -65,6 +68,8 @@ Increased speed of developer-level tests **2.5x**, resulting in active use by **
 
 Implemented 2D, 3D and VR graphics tests with natural and generated content using OpenGL ES (GLES).
 
+<br>
+
 ### Georgia Institute of Technology, 2018-2019
 
 As an Undergraduate Teaching Assistant, taught introductory computing and MATLAB to **200 students** personally over four semesters.
@@ -72,6 +77,8 @@ As an Undergraduate Teaching Assistant, taught introductory computing and MATLAB
 Created an [automatic homework grader](https://github.com/CS1371/autograder) suite as the Lead Developer of an agile software development team with 8 other TAs.
 
 Enabled the course’s migration to a new CMS by developing a critical data conversion utility in MATLAB.
+
+<br>
 
 ### Freelance Software Development, 2013-2016
 
@@ -157,7 +164,7 @@ See our [final report](https://baranusluel.com/sentiment-cnn/) as a Github Page.
 Led a team making [an IoT facial-recognition system](https://github.com/baranusluel/autoknoby) at Qualcomm's Intern Hackathon. Awarded **‘Most Innovative Hack’** and ‘Top 10 Best Hack’ from 60 teams.
 
 Leveraged Python and OpenCV for facial detection, with Microsoft’s Face API for recognition, on a DragonBoard 410c.
-<br style="clear: left;">
+<br style="clear: left;"><br>
 
 <a href="https://2048.baranusluel.com/"><img class="right-float-pic" src="/assets/2048_3d.gif"></a>
 
@@ -168,14 +175,14 @@ Developed a [fully 3D version](https://github.com/baranusluel/2048-3d) of the po
 Also developed a [version of the game entirely in MATLAB](https://github.com/baranusluel/2048-3d-matlab) as a proof-of-concept.
 
 **Click the animation to play now!**
-<br style="clear: right;">
+<br style="clear: right;"><br>
 
 ### Mbed Pacman RPG: Embedded platform game, 2018
 
 <iframe class="left-float-pic" style="margin-bottom: 20px" src="https://www.youtube.com/embed/NhTJ7zDlHBU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Designed a Pacman-themed [RPG game in C](https://github.com/baranusluel/mbed-pacman-rpg) for the ARM Mbed platform.
-<br style="clear: left;">
+<br style="clear: left;"><br>
 
 <img class="right-float-pic" src="/assets/flight_vr.jpg">
 
@@ -184,7 +191,7 @@ Designed a Pacman-themed [RPG game in C](https://github.com/baranusluel/mbed-pac
 Created a Google Cardboard [VR game](https://github.com/baranusluel/flight-VR) with Unity.
 
 This was submitted as a project for my freshman *English* class, believe it or not.
-<br style="clear: right;">
+<br style="clear: right;"><br>
 
 ### Catch-Bot: Operation Catapult project, 2016
 
