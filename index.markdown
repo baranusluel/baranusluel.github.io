@@ -5,7 +5,7 @@ layout: default
   <h3 style="margin-top: 0;">###################<br/>###&nbsp;&nbsp;&nbsp;Welcome&nbsp;&nbsp;&nbsp;###<br/>###################</h3>
   <h3>>> <span style="color: gray">echo</span> "to my personal website and blog!"</h3>
   <h3>>> <span style="color: gray">echo</span> "I am a graduate of Georgia Tech in electrical engineering and an incoming software engineer at Facebook."</h3>
-  <h3>>> _</h3>
+  <h3>>> <span class="blink">_</span></h3>
 </div>
 
 <div class="row" style="margin-top: 0px">
