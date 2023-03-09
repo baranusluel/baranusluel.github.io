@@ -9,8 +9,8 @@ permalink: /about
 <!-- OUTDATED: <div class="column" style="text-align: right"><h3 style="margin: 0"><a href="/assets/BaranUsluel.CV.2020-03-30.long.pdf">Resume (PDF)</a></h3></div> -->
 </div>
 
-**\Software Engineer at Facebook** and graduate of **BS in Electrical Engineering at Georgia Tech**,
-with ~2 years of experience working on production software.
+**Software Engineer at Facebook** and graduate of **BS in Electrical Engineering at Georgia Tech**,
+with 2+ years of experience working on production software.
 
 Technical skills include proficiency in **C++**, **Java** and **Python**.
 
