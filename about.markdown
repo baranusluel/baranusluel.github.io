@@ -9,14 +9,10 @@ permalink: /about
 <!-- OUTDATED: <div class="column" style="text-align: right"><h3 style="margin: 0"><a href="/assets/BaranUsluel.CV.2020-03-30.long.pdf">Resume (PDF)</a></h3></div> -->
 </div>
 
-**Software Engineer at Facebook** and graduate of **BS in Electrical Engineering at Georgia Tech**,
-with 2+ years of experience working on production software.
+**Software Engineer at Meta Reality Labs** and graduate of **BS in Electrical Engineering at Georgia Tech**,
+with 5+ years of experience building production software.
 
-Technical skills include proficiency in **C++**, **Java** and **Python**.
-
-Built software for hardware products at **Qualcomm** and **Oculus / Facebook Reality Labs / Meta**.
-
-Interested in working across the hardware/software stack for innovative technology.
+I enjoy working on system software, most often in **C++**, and helping to innovate on new technologies.
 
 <hr>
 
