@@ -13,6 +13,7 @@ class MagneticField {
         this.maxForce = 1.2;
         this.ripples = [];
         this.animationId = null;
+        this.isHoverEnabled = window.matchMedia('(hover: hover)').matches;
         
         this.init();
     }
@@ -34,9 +35,17 @@ class MagneticField {
     createLines() {
         this.lines = [];
         
-        // Adjust grid size based on screen size for performance
+        // Adjust grid size based on device type and screen size for performance
         const screenArea = this.canvas.width * this.canvas.height;
-        const adjustedGridSize = screenArea > 1000000 ? this.gridSize : this.gridSize * 1.5;
+        let adjustedGridSize;
+        
+        if (this.isHoverEnabled) {
+            // For hover-enabled devices (lines), use original logic
+            adjustedGridSize = screenArea > 1000000 ? this.gridSize : this.gridSize * 1.5;
+        } else {
+            // For touch devices (dots), create a denser grid
+            adjustedGridSize = screenArea > 1000000 ? this.gridSize * 0.6 : this.gridSize * 0.8;
+        }
         
         const cols = Math.ceil(this.canvas.width / adjustedGridSize);
         const rows = Math.ceil(this.canvas.height / adjustedGridSize);
@@ -61,45 +70,89 @@ class MagneticField {
     bindEvents() {
         window.addEventListener('resize', () => this.resize());
         
-        // Listen for mouse events on the document since canvas has pointer-events: none
-        document.addEventListener('mousemove', (e) => {
+        // Listen for pointer events on the document since canvas has pointer-events: none
+        document.addEventListener('pointermove', (e) => {
             this.mouse.x = e.clientX;
             this.mouse.y = e.clientY;
+            
+            // Debug: log pointer movement for touch
+            if (e.pointerType === 'touch' && this.isMouseDown) {
+                console.log('Touch move:', e.clientX, e.clientY);
+            }
         });
         
-        document.addEventListener('mouseleave', () => {
+        document.addEventListener('pointerleave', () => {
             this.mouse.x = -1000;
             this.mouse.y = -1000;
             this.isMouseDown = false;
         });
         
-        // Start ripple effect on pointerdown (left click only)
+        // Start ripple effect on pointerdown (any primary pointer)
         document.addEventListener('pointerdown', (e) => {
-            if (e.button === 0) { // Left mouse button only
+            if (e.isPrimary) { // Primary pointer (first finger, left mouse button, etc.)
                 this.isMouseDown = true;
+                this.mouse.x = e.clientX;
+                this.mouse.y = e.clientY;
                 this.createRipple(e.clientX, e.clientY);
+                console.log('Pointer down:', e.pointerType, e.clientX, e.clientY);
+                
+                // Prevent default touch behavior to avoid scroll interference
+                if (e.pointerType === 'touch') {
+                    e.preventDefault();
+                }
             }
         });
         
+        // Prevent context menu on long-press for touch devices
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            this.isMouseDown = false; // Reset state if context menu somehow appears
+        });
+        
+        // Additional touch event handling for better touch tracking
+        document.addEventListener('touchstart', (e) => {
+            // if (e.touches.length > 0) {
+            //     // Prevent context menu on long-press
+            //     e.preventDefault();
+            // }
+        }, { passive: false });
+        
         // Stop ripple effect on pointerup
         document.addEventListener('pointerup', (e) => {
-            this.isMouseDown = false;
+            if (e.isPrimary) {
+                this.isMouseDown = false;
+                console.log('Pointer up:', e.pointerType);
+            }
         });
         
         // Handle pointer cancellation (right-click, drag out of window, etc.)
         document.addEventListener('pointercancel', (e) => {
-            this.isMouseDown = false;
-        });
-        
-        // Debug: log mouse position
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() < 0.01) { // Log occasionally to avoid spam
-                console.log('Mouse:', e.clientX, e.clientY);
+            if (e.isPrimary) {
+                this.isMouseDown = false;
+                console.log('Pointer cancel:', e.pointerType);
             }
         });
+        
+        // Additional touch event handling for better touch tracking
+        document.addEventListener('touchmove', (e) => {
+            if (this.isMouseDown && e.touches.length > 0) {
+                const touch = e.touches[0];
+                this.mouse.x = touch.clientX;
+                this.mouse.y = touch.clientY;
+                console.log('Touch move (native):', touch.clientX, touch.clientY);
+                
+                // Prevent default touch behavior when we're tracking for ripples
+                e.preventDefault();
+            }
+        }, { passive: false });
     }
     
     calculateMagneticForce(line) {
+        // Only apply magnetic force on hover-enabled devices
+        if (!this.isHoverEnabled) {
+            return { force: 0, angle: 0 };
+        }
+        
         const dx = this.mouse.x - line.x;
         const dy = this.mouse.y - line.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -243,21 +296,30 @@ class MagneticField {
             this.ctx.stroke();
         });
         
-        // Draw magnetic field lines
+        // Draw magnetic field lines or dots based on device type
         this.ctx.strokeStyle = '#3b82f6';
+        this.ctx.fillStyle = '#3b82f6'; // Set fill style to match stroke style for dots
         this.ctx.lineWidth = 1;
         this.ctx.lineCap = 'round';
         
         this.lines.forEach(line => {
-            const x1 = line.x - Math.cos(line.angle) * this.lineLength / 2;
-            const y1 = line.y - Math.sin(line.angle) * this.lineLength / 2;
-            const x2 = line.x + Math.cos(line.angle) * this.lineLength / 2;
-            const y2 = line.y + Math.sin(line.angle) * this.lineLength / 2;
-            
-            this.ctx.beginPath();
-            this.ctx.moveTo(x1, y1);
-            this.ctx.lineTo(x2, y2);
-            this.ctx.stroke();
+            if (this.isHoverEnabled) {
+                // Draw lines for hover-enabled devices (magnetic field effect)
+                const x1 = line.x - Math.cos(line.angle) * this.lineLength / 2;
+                const y1 = line.y - Math.sin(line.angle) * this.lineLength / 2;
+                const x2 = line.x + Math.cos(line.angle) * this.lineLength / 2;
+                const y2 = line.y + Math.sin(line.angle) * this.lineLength / 2;
+                
+                this.ctx.beginPath();
+                this.ctx.moveTo(x1, y1);
+                this.ctx.lineTo(x2, y2);
+                this.ctx.stroke();
+            } else {
+                // Draw dots for touch devices (simpler grid for ripple effect)
+                this.ctx.beginPath();
+                this.ctx.arc(line.x, line.y, 1, 0, 2 * Math.PI);
+                this.ctx.fill();
+            }
         });
     }
     
