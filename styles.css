@@ -108,6 +108,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 2rem 0;
+    width: 100%;
 }
 
 /* About page specific main content */
@@ -116,6 +117,8 @@ body {
     justify-content: flex-start;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    max-width: 100%;
 }
 
 .card {
@@ -137,6 +140,8 @@ body {
     max-width: 100%;
     text-align: left;
     padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .card:hover {
@@ -232,6 +237,7 @@ body {
     gap: 2rem;
     margin-bottom: 2rem;
     animation: fadeInDown 0.8s ease-out 0.1s both;
+    flex-wrap: wrap;
 }
 
 .nav-link {
@@ -341,18 +347,77 @@ body {
 }
 
 /* Responsive design */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
-        padding: 0 1rem;
+        padding: 0 1.5rem;
+    }
+    
+    .card {
+        padding: 2.5rem;
+    }
+    
+    .about-page .card {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 0 1.25rem;
     }
     
     .header {
-        padding: 2rem 0 1rem;
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem 0;
+    }
+    
+    .about-page .main-content {
+        gap: 1.5rem;
     }
     
     .card {
         padding: 2rem;
-        margin: 0 1rem;
+    }
+    
+    .about-page .card {
+        padding: 1.5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.75rem;
+    }
+    
+    .card p {
+        font-size: 1.05rem;
+    }
+    
+    .experience-item h3,
+    .education-item h3,
+    .project-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .experience-item h4,
+    .education-item h4 {
+        font-size: 1rem;
+    }
+    
+    .experience-item,
+    .education-item,
+    .project-item {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
     }
     
     .cta-buttons {
@@ -366,20 +431,101 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header {
+        padding: 2rem 0 1rem;
+    }
+    
+    .card {
+        padding: 1.75rem;
+        margin: 0 0.5rem;
+    }
+    
+    .about-page .card {
+        padding: 1.25rem;
+        margin: 0;
+    }
+    
+    .navigation {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .header {
+        padding: 1.5rem 0 1rem;
+    }
+    
     .title {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
     
     .subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+        margin: 0 0.25rem;
+    }
+    
+    .about-page .card {
+        padding: 1rem;
+        margin: 0;
     }
     
     .card h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
     }
     
     .card p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bio-intro p {
         font-size: 1rem;
+    }
+    
+    .experience-item h3,
+    .education-item h3,
+    .project-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .experience-item h4,
+    .education-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    .experience-item,
+    .education-item,
+    .project-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .experience-item ul,
+    .education-item ul {
+        padding-left: 1.25rem;
+    }
+    
+    .experience-item li,
+    .education-item li {
+        font-size: 0.9rem;
     }
 }
