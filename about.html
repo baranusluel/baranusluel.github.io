@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Baran Usluel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <canvas id="magneticField" class="magnetic-field"></canvas>
+    <div class="container">
+        <header class="header">
+            <nav class="navigation">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About</a>
+            </nav>
+            <h1 class="title">About Me</h1>
+            <p class="subtitle">Software Engineer at Meta Reality Labs</p>
+        </header>
+        
+        <main class="main-content">
+            <div class="card">
+                <div class="bio-intro">
+                    <p><strong>Software Engineer at Meta Reality Labs</strong> and graduate of <strong>BS in Electrical Engineering at Georgia Tech</strong>, with 5+ years of experience building production software.</p>
+                    <p>I enjoy working on system software, most often in <strong>C++</strong>, and helping to innovate on new technologies.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Experience</h2>
+                
+                <div class="experience-item">
+                    <h3>Meta, Aug 2021 - Present</h3>
+                    <p>TODO: Expand</p>
+                    <ul>
+                        <li>VR Shell</li>
+                        <li>VR Browser</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Facebook, Summer 2020</h3>
+                    <p>Interned at Facebook remotely on the Oculus VR Shell team based in Seattle.</p>
+                    <ul>
+                        <li>Designed, implemented, and launched alpha testing of a major user-facing feature for multitasking on Oculus Quest devices.</li>
+                        <li>Collaborated cross-functionally with partner teams to enable future of work scenarios in mixed reality.</li>
+                        <li>Contributed 10,000+ lines of production code in <strong>C++</strong> to an infrastructural codebase and overhauled a core component.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Facebook, Summer 2019</h3>
+                    <p>Interned at Facebook in Menlo Park on the Oculus VR OS team.</p>
+                    <ul>
+                        <li>Introduced the first "Hey Oculus" voice assistant wake-word on the Oculus Quest by assisting in developing an AOSP HAL, performing system integration and writing E2E tests.</li>
+                        <li>Developed automated audio test framework with <strong>Java (JNI)</strong> and <strong>C++</strong> for AOSP-based standalone Oculus VR devices.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Qualcomm, Summer 2018</h3>
+                    <p>Interned at Qualcomm in San Diego on the Snapdragon Display Test team.</p>
+                    <ul>
+                        <li>Developed an Android app with <strong>Java</strong> for display software testing, which ran <strong>400+ existing</strong> Lua tests and <strong>100+ new</strong> tests.</li>
+                        <li>Increased speed of developer-level tests <strong>2.5x</strong>, resulting in active use by <strong>30+</strong> display software developers.</li>
+                        <li>Implemented 2D, 3D and VR graphics tests with natural and generated content using OpenGL ES (GLES).</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Georgia Institute of Technology, 2018-2019</h3>
+                    <p>As an Undergraduate Teaching Assistant, taught introductory computing and MATLAB to <strong>200 students</strong> personally over four semesters.</p>
+                    <ul>
+                        <li>Created an automatic homework grader suite as the Lead Developer of an agile software development team with 8 other TAs.</li>
+                        <li>Enabled the course's migration to a new CMS by developing a critical data conversion utility in MATLAB.</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Freelance Software Development, 2013-2016</h3>
+                    <p>Picked up freelance web and Java development jobs during high school.</p>
+                    <ul>
+                        <li>Developed and maintained <strong>3 websites</strong> for the clients of a local advertising & PR company (ADD PR Design). Designed responsive themes for WordPress CMS with PHP, HTML, CSS and Javascript.</li>
+                        <li>Built plugins for commercial Minecraft server networks using Java and the Bukkit API to add new gameplay functionality. Wrote <strong>100+</strong> Java plugins (<strong>25,000+ lines</strong>) in total, for clients and as open-source projects (one with 800,000 downloads).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Georgia Institute of Technology, BSEE 2021</h3>
+                    <p>Graduated with a Bachelor of Science in <strong>Electrical Engineering</strong> and a minor in <strong>Computer Science</strong> (<strong>Artificial Intelligence</strong> concentration) in May 2021 with a 4.0 GPA.</p>
+                    <p>Received the <strong>Outstanding Electrical Engineering Senior Award</strong> from the School of Electrical and Computer Engineering.</p>
+                    
+                    <h4>Relevant Coursework:</h4>
+                    <p>Embedded Systems Design, Control System Design, Digital Signal Processing, Deep Learning, Computer Vision, Robotics & Perception, Advanced Programming Techniques, Cryptographic Hardware for Embedded Systems.</p>
+                    
+                    <h4>Extracurriculars:</h4>
+                    <p>GT Chamber Choir, RoboJackets (Intelligent Ground Vehicle Competition, Electrical Team), Intramural Soccer & Ultimate Frisbee, Tech Treks Alaska.</p>
+                    
+                    <h4>Certifications:</h4>
+                    <p>Triplebyte Certified Generalist Software Engineer, American Red Cross First Aid/CPR/AED, PADI Open Water Scuba Diver <em>(in progress)</em>.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Projects</h2>
+                
+                <div class="project-item">
+                    <h3>Flightie Talkie: Capstone Design Project, 2021</h3>
+                    <p>Designed and integrated a long-range two-way audio communication payload with the SkyRaider R80D SUAS for the US Army Rangers.</p>
+                    <p>Awarded one of three People's Choice Awards out of 186 teams at the 2021 Spring Design Expo.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Square On: The Magic Chess Robot, 2020</h3>
+                    <p>Designed and built an open-source and <em>highly</em>-DIY version of the commercial Square Off smart chess board.</p>
+                    <p>Constructed a custom X-Y cartesian robot using the CoreXY design concept, equipped with an electromagnet for moving chess pieces.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Resisting Adversarial Attacks by k-WTA, 2020</h3>
+                    <p>Demonstrated reproducibility of empirical results of ICLR 2020 paper <em>"Enhancing Adversarial Defense by k-Winners-Take-All"</em> (Xiao et al.).</p>
+                    <p>Utilized <strong>PyTorch</strong> to replace ReLU activations in well-known deep model architectures with the k-WTA activation function, and test performance under several white-box attacks.</p>
+                    <p>Discovered a significant performance overhead not mentioned in the original work, and proposed a workaround to improve training time.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Sentiment Analysis with CNNs, 2020</h3>
+                    <p>Trained a deep convolutional neural network with <strong>Keras</strong> to perform sentiment analysis on movie reviews using word2vec embeddings.</p>
+                    <p>Achieved a test accuracy of 71% on the Bo Pang et al. movie review 'scale dataset v1.0'.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Autoknoby: HackMobile project, 2018</h3>
+                    <p>Led a team making an IoT facial-recognition system at Qualcomm's Intern Hackathon. Awarded <strong>'Most Innovative Hack'</strong> and 'Top 10 Best Hack' from 60 teams.</p>
+                    <p>Leveraged Python and OpenCV for facial detection, with Microsoft's Face API for recognition, on a DragonBoard 410c.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>2048 3D: Mobile and web game, 2018</h3>
+                    <p>Developed a fully 3D version of the popular 2048 game using Unity and C#, for web and Android (Google Play) devices.</p>
+                    <p>Also developed a version of the game entirely in MATLAB as a proof-of-concept.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Mbed Pacman RPG: Embedded platform game, 2018</h3>
+                    <p>Designed a Pacman-themed RPG game in C for the ARM Mbed platform.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Flight VR: Virtual reality game, 2018</h3>
+                    <p>Created a Google Cardboard VR game with Unity.</p>
+                    <p>This was submitted as a project for my freshman <em>English</em> class, believe it or not.</p>
+                </div>
+
+                <div class="project-item">
+                    <h3>Catch-Bot: Operation Catapult project, 2016</h3>
+                    <p>Led a team of 4 to build a robot that catches balls in the air.</p>
+                    <p>Awarded <strong>1st place for 'Best Project'</strong> out of 40 teams, at Rose-Hulman's summer program for high school juniors.</p>
+                    <p>Implemented naive stereo vision algorithm with C++ and OpenCV, built control circuit and assisted with mechanical design.</p>
+                </div>
+            </div>
+        </main>
+        
+        <footer class="footer">
+            <p>&copy; 2025 Baran Usluel. Built with ❤️ and pure HTML/CSS/JS.</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

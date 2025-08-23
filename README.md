@@ -60,6 +60,29 @@ The website is built to be easily customizable:
 - **Content**: Update the HTML content in `index.html`
 - **Animations**: Adjust timing and effects in `styles.css`
 
+## TODO
+
+### 🎮 **Advanced Interactions**
+- [ ] **Multi-touch Support** - Create multiple ripples simultaneously with touch gestures
+- [ ] **Physics Playground** - Different force types (gravity wells, repulsion, attraction zones)
+- [ ] **3D Effects** - Add depth, perspective, and 3D transformations to the magnetic field
+- [ ] **Interactive Resume** - Hover sections to see details with magnetic attraction effects
+- [ ] **Dynamic Theme** - Automatically adjust theme based on Seattle's weather conditions
+
+### 🥚 **Easter Eggs & Minigames**
+- [ ] **Hidden Easter Eggs** - Secret interactions and discoveries throughout the site
+- [ ] **Mini-games** - Fun interactive games using the magnetic field mechanics
+- [ ] **Achievement System** - Unlock new visual effects and interactions
+- [ ] **Konami Code** - Classic easter egg implementation
+- [ ] **Hidden Patterns** - Draw specific shapes to trigger special effects
+
+### 🚀 **Future Enhancements**
+- [ ] **Audio Reactivity** - Microphone input for sound-based interactions
+- [ ] **Gesture Recognition** - Hand tracking and gesture controls
+- [ ] **Device Sensors** - Accelerometer, gyroscope, and proximity sensor integration
+- [ ] **Particle Systems** - Floating particles and trail effects
+- [ ] **Performance Optimizations** - WebGL shaders and WebAssembly integration
+
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).

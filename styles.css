@@ -109,6 +109,14 @@ body {
     padding: 2rem 0;
 }
 
+/* About page specific main content */
+.about-page .main-content {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+}
+
 .card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
@@ -120,6 +128,13 @@ body {
     width: 100%;
     animation: fadeInUp 0.8s ease-out 0.4s both;
     transition: var(--transition);
+}
+
+/* About page specific card styles */
+.about-page .card {
+    max-width: 100%;
+    text-align: left;
+    padding: 2rem;
 }
 
 .card:hover {
@@ -206,6 +221,98 @@ body {
     color: var(--text-secondary);
     font-size: 0.9rem;
     animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out 0.1s both;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background: var(--surface-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    background: var(--surface-color);
+}
+
+/* Bio page specific styles */
+.bio-intro {
+    margin-bottom: 1rem;
+}
+
+.bio-intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.experience-item,
+.education-item,
+.project-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-item:last-child,
+.education-item:last-child,
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.experience-item h3,
+.education-item h3,
+.project-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item h4,
+.education-item h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.experience-item p,
+.education-item p,
+.project-item p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.experience-item ul,
+.education-item ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+}
+
+.experience-item li,
+.education-item li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
 }
 
 /* Animations */
