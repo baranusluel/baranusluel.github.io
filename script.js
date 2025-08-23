@@ -18,10 +18,7 @@ const CONFIG = {
         STRENGTH: 1.0,
         LIFE_DECAY: 0.04,
         MOUSE_INTERVAL: 50,
-        TOUCH_INTERVAL: 100,
-        TIMEOUT: 5000,
-        MAX_DURATION: 3000,
-        NO_MOVEMENT_TIMEOUT: 2000
+        TOUCH_INTERVAL: 100
     },
     ANIMATION: {
         RIPPLE_OPACITY: 0.15,
@@ -64,32 +61,19 @@ class RippleManager {
     constructor() {
         this.ripples = [];
         this.isMouseDown = false;
-        this.rippleStartTime = null;
         this.currentPointerType = null;
         this.lastRippleTime = null;
-        this.rippleTimeout = null;
     }
     
     resetState() {
         this.isMouseDown = false;
-        this.rippleStartTime = null;
         this.currentPointerType = null;
         this.lastRippleTime = null;
-        if (this.rippleTimeout) {
-            clearTimeout(this.rippleTimeout);
-            this.rippleTimeout = null;
-        }
     }
     
     startRipple(pointerType) {
         this.isMouseDown = true;
-        this.rippleStartTime = Date.now();
         this.currentPointerType = pointerType;
-        
-        this.rippleTimeout = setTimeout(() => {
-            this.resetState();
-            console.log('Ripple timeout - resetting state');
-        }, CONFIG.RIPPLE.TIMEOUT);
     }
     
     createRipple(x, y) {
@@ -143,25 +127,7 @@ class RippleManager {
         return totalForce;
     }
     
-    checkForStuckRipples(lastMouseMoveTime) {
-        if (this.isMouseDown && this.rippleStartTime) {
-            const rippleDuration = Date.now() - this.rippleStartTime;
-            
-            if (rippleDuration > CONFIG.RIPPLE.MAX_DURATION) {
-                console.log('Stuck ripple detected (duration) - forcing reset after', rippleDuration, 'ms');
-                this.resetState();
-                return true;
-            }
-            
-            if (lastMouseMoveTime && this.currentPointerType === 'mouse' && 
-                (Date.now() - lastMouseMoveTime) > CONFIG.RIPPLE.NO_MOVEMENT_TIMEOUT) {
-                console.log('Stuck ripple detected (no mouse movement) - forcing reset');
-                this.resetState();
-                return true;
-            }
-        }
-        return false;
-    }
+
 }
 
 // Grid line management
@@ -404,14 +370,22 @@ class EventHandler {
     handleContextMenu(e) {
         const isInteractive = Utils.isInteractiveElement(e.target);
         if (!isInteractive) {
-            e.preventDefault();
-            this.magneticField.rippleManager.resetState();
+            // Only prevent context menu on touch devices (long-press)
+            // Allow right-click context menu on mouse devices
+            if (e.pointerType === 'touch' || e.sourceCapabilities?.firesTouchEvents) {
+                e.preventDefault();
+                this.magneticField.rippleManager.resetState();
+            }
         }
     }
     
     handleTouchStart(e) {
         const isInteractive = Utils.isInteractiveElement(e.target);
-        if (!isInteractive && e.touches.length > 0) {
+        const isOnMagneticField = e.target.closest('#magneticField');
+        
+        // Only prevent default when directly on the magnetic field canvas
+        if (!isInteractive && e.target === this.magneticField.canvas && e.touches.length > 0) {
+            // Prevent default to avoid context menu on long-press and scrolling
             e.preventDefault();
         }
     }
@@ -435,11 +409,16 @@ class EventHandler {
             console.log('Touch move (native):', touch.clientX, touch.clientY);
             
             const isInteractive = Utils.isInteractiveElement(e.target);
-            if (!isInteractive) {
+            
+            // Only prevent scrolling when directly on the magnetic field canvas
+            if (!isInteractive && e.target === this.magneticField.canvas) {
+                // Prevent scrolling to allow ripple effect to follow finger
                 e.preventDefault();
             }
         }
     }
+    
+
 }
 
 // Main magnetic field class (simplified)
@@ -474,10 +453,6 @@ class MagneticField {
     }
     
     updateLines() {
-        if (this.rippleManager.checkForStuckRipples(this.eventHandler.lastMouseMoveTime)) {
-            return;
-        }
-        
         this.rippleManager.updateRipples(this.mouse.x, this.mouse.y);
         
         this.gridManager.lines.forEach(line => {
@@ -669,6 +644,10 @@ class KeyboardShortcuts {
         });
     }
 }
+
+// Make functions globally accessible for HTML onclick handlers
+window.sayHello = UIComponents.sayHello;
+window.toggleTheme = UIComponents.toggleTheme;
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
