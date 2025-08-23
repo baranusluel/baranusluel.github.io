@@ -37,6 +37,7 @@ body {
     min-height: 100vh;
     position: relative;
     overflow-x: hidden;
+    user-select: none; /* Prevent text selection by default */
 }
 
 .magnetic-field {
@@ -128,6 +129,7 @@ body {
     width: 100%;
     animation: fadeInUp 0.8s ease-out 0.4s both;
     transition: var(--transition);
+    user-select: text; /* Allow text selection on cards */
 }
 
 /* About page specific card styles */

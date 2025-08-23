@@ -6,6 +6,7 @@ class MagneticField {
         this.canvas = document.getElementById('magneticField');
         this.ctx = this.canvas.getContext('2d');
         this.mouse = { x: -1000, y: -1000 };
+        this.isMouseDown = false;
         this.lines = [];
         this.gridSize = 30;
         this.lineLength = 10;
@@ -69,11 +70,25 @@ class MagneticField {
         document.addEventListener('mouseleave', () => {
             this.mouse.x = -1000;
             this.mouse.y = -1000;
+            this.isMouseDown = false;
         });
         
-        // Add ripple effect on click
-        document.addEventListener('mousedown', (e) => {
-            this.createRipple(e.clientX, e.clientY);
+        // Start ripple effect on pointerdown (left click only)
+        document.addEventListener('pointerdown', (e) => {
+            if (e.button === 0) { // Left mouse button only
+                this.isMouseDown = true;
+                this.createRipple(e.clientX, e.clientY);
+            }
+        });
+        
+        // Stop ripple effect on pointerup
+        document.addEventListener('pointerup', (e) => {
+            this.isMouseDown = false;
+        });
+        
+        // Handle pointer cancellation (right-click, drag out of window, etc.)
+        document.addEventListener('pointercancel', (e) => {
+            this.isMouseDown = false;
         });
         
         // Debug: log mouse position
@@ -117,6 +132,13 @@ class MagneticField {
         });
     }
     
+    updateRipples() {
+        // If mouse is pressed down, continuously create ripples at mouse position
+        if (this.isMouseDown) {
+            this.createRipple(this.mouse.x, this.mouse.y);
+        }
+    }
+    
     calculateRippleForce(line) {
         let totalForce = { x: 0, y: 0 };
         
@@ -145,6 +167,7 @@ class MagneticField {
     
     updateLines() {
         // Update ripples
+        this.updateRipples();
         this.ripples = this.ripples.filter(ripple => {
             ripple.radius += ripple.speed;
             ripple.life -= 0.04;
