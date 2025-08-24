@@ -1,0 +1,537 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Prevent scrolling only on the magnetic field canvas */
+#magneticField {
+    touch-action: none;
+    overscroll-behavior: none;
+}
+
+:root {
+    --primary-color: #3b82f6;
+    --primary-hover: #2563eb;
+    --secondary-color: #64748b;
+    --background-color: #ffffff;
+    --surface-color: #f8fafc;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border-color: #334155;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: var(--transition);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    user-select: none; /* Prevent text selection by default */
+}
+
+.magnetic-field {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.magnetic-field:hover {
+    opacity: 0.4;
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .magnetic-field {
+    opacity: 0.4;
+}
+
+[data-theme="dark"] .magnetic-field:hover {
+    opacity: 0.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+}
+
+/* Header styles */
+.header {
+    text-align: center;
+    padding: 4rem 0 2rem;
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Main content */
+.main-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+/* About page specific main content */
+.about-page .main-content {
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeInUp 0.8s ease-out 0.4s both;
+    transition: var(--transition);
+    user-select: text; /* Allow text selection on cards */
+}
+
+/* About page specific card styles */
+.about-page .card {
+    max-width: 100%;
+    text-align: left;
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.card p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.7;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: var(--surface-color);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeInDown 0.8s ease-out 0.1s both;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--primary-color);
+    background: var(--surface-color);
+}
+
+.nav-link.active {
+    color: var(--primary-color);
+    background: var(--surface-color);
+}
+
+/* Bio page specific styles */
+.bio-intro {
+    margin-bottom: 1rem;
+}
+
+.bio-intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.experience-item,
+.education-item,
+.project-item {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.experience-item:last-child,
+.education-item:last-child,
+.project-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.experience-item h3,
+.education-item h3,
+.project-item h3 {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.experience-item h4,
+.education-item h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.experience-item p,
+.education-item p,
+.project-item p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+
+.experience-item ul,
+.education-item ul {
+    margin: 0.75rem 0;
+    padding-left: 1.5rem;
+}
+
+.experience-item li,
+.education-item li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .card {
+        padding: 2.5rem;
+    }
+    
+    .about-page .card {
+        padding: 1.75rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+    
+    .header {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .title {
+        font-size: clamp(2rem, 4vw, 3rem);
+    }
+    
+    .subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem 0;
+    }
+    
+    .about-page .main-content {
+        gap: 1.5rem;
+    }
+    
+    .card {
+        padding: 2rem;
+    }
+    
+    .about-page .card {
+        padding: 1.5rem;
+    }
+    
+    .card h2 {
+        font-size: 1.75rem;
+    }
+    
+    .card p {
+        font-size: 1.05rem;
+    }
+    
+    .experience-item h3,
+    .education-item h3,
+    .project-item h3 {
+        font-size: 1.2rem;
+    }
+    
+    .experience-item h4,
+    .education-item h4 {
+        font-size: 1rem;
+    }
+    
+    .experience-item,
+    .education-item,
+    .project-item {
+        margin-bottom: 1.75rem;
+        padding-bottom: 1.75rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .header {
+        padding: 2rem 0 1rem;
+    }
+    
+    .card {
+        padding: 1.75rem;
+        margin: 0 0.5rem;
+    }
+    
+    .about-page .card {
+        padding: 1.25rem;
+        margin: 0;
+    }
+    
+    .navigation {
+        gap: 1rem;
+    }
+    
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .header {
+        padding: 1.5rem 0 1rem;
+    }
+    
+    .title {
+        font-size: 1.75rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    
+    .card {
+        padding: 1.5rem;
+        margin: 0 0.25rem;
+    }
+    
+    .about-page .card {
+        padding: 1rem;
+        margin: 0;
+    }
+    
+    .card h2 {
+        font-size: 1.4rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .card p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .bio-intro p {
+        font-size: 1rem;
+    }
+    
+    .experience-item h3,
+    .education-item h3,
+    .project-item h3 {
+        font-size: 1.1rem;
+    }
+    
+    .experience-item h4,
+    .education-item h4 {
+        font-size: 0.95rem;
+    }
+    
+    .experience-item,
+    .education-item,
+    .project-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+    
+    .experience-item ul,
+    .education-item ul {
+        padding-left: 1.25rem;
+    }
+    
+    .experience-item li,
+    .education-item li {
+        font-size: 0.9rem;
+    }
+}
