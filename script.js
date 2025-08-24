@@ -172,11 +172,6 @@ class GridManager {
             }
         }
     }
-    
-    // This method is no longer needed since we call createLines directly
-    // resize() {
-    //     this.createLines();
-    // }
 }
 
 // Physics calculations
@@ -662,3 +657,33 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('%cVR Software Engineer at Meta Reality Labs | Georgia Tech EE Graduate', 'color: #64748b; font-size: 14px;');
     console.log('%cFeel free to explore the code and let me know what you think!', 'color: #64748b; font-size: 12px;');
 });
+
+// Export classes and objects for testing
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        CONFIG,
+        Utils,
+        RippleManager,
+        GridManager,
+        PhysicsEngine,
+        Renderer,
+        EventHandler,
+        MagneticField,
+        UIComponents,
+        NotificationManager,
+        KeyboardShortcuts
+    };
+} else {
+    // Make available globally for browser
+    window.CONFIG = CONFIG;
+    window.Utils = Utils;
+    window.RippleManager = RippleManager;
+    window.GridManager = GridManager;
+    window.PhysicsEngine = PhysicsEngine;
+    window.Renderer = Renderer;
+    window.EventHandler = EventHandler;
+    window.MagneticField = MagneticField;
+    window.UIComponents = UIComponents;
+    window.NotificationManager = NotificationManager;
+    window.KeyboardShortcuts = KeyboardShortcuts;
+}
