@@ -1,0 +1,13 @@
+<footer class="footer" role="contentinfo">
+    <small>
+        <div style="float: left">
+            <p style="margin-top: 0;">© {{ site.time | date: '%Y' }} {{ site.author.name }}</p>
+            <p><a href="/atom.xml">Subscribe (RSS Feed)</a></p>
+        </div>
+        <div style="float: right">
+            <code>{{ site.author.email }}</code><br>
+            {%- include social.html -%}
+        </div>
+    </small>
+    <br><br>
+</footer>
